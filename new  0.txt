@@ -1,0 +1,9 @@
+string str = "要編碼的字串";
+HttpUtility.UrlEncode("str", Encoding.GetEncoding("big5"));
+
+
+
+string sourceURL = Request.Url.Query;
+sourceURL = HttpUtility.UrlEncode(sourceURL, Encoding.GetEncoding("big5")); //將asp用big5傳來的url decode
+sourceURL = sourceURL.Replace("?q=", "");
+Response.Redirect(sourceURL);
